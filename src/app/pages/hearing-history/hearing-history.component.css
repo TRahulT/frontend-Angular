@@ -1,0 +1,85 @@
+/* Center the form */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px; /* Adjust margin as needed */
+}
+
+/* Style the label and input */
+label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+
+/* Style the button */
+button {
+  /* padding: 10px 20px; */
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}
+
+/* Style the headings */
+h2 {
+  background-color: #f2f2f2; /* Background color for headings */
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+h2:hover {
+  background-color: #e0e0e0; /* Darker color on hover */
+}
+
+/* Style the list items */
+li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+/* Style links within the list items */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Style individual sections */
+div {
+  margin-top: 20px;
+}
+
+/* Additional styling for specific elements can be added based on requirements */
+h2 {
+  text-align: center; /* Center align the headings */
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #333; /* Default color */
+}
+
+h2:hover {
+  background-color: #d4e8ff; /* Light blue background color on hover */
+}
+strong {
+  margin-left: 10px; /* Set left margin */
+  text-transform: uppercase; /* Capitalize all letters */
+  word-spacing: 5px; /* Adjust word spacing as desired */
+}

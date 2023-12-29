@@ -1,0 +1,40 @@
+.about-page {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+h2 {
+  font-size: 28px;
+  color: #333;
+}
+
+h3 {
+  font-size: 24px;
+  color: #333;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+li {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* You can customize the styles further as needed. */

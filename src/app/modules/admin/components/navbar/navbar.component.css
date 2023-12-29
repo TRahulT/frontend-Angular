@@ -1,0 +1,20 @@
+/* In your component's CSS or SCSS file */
+.top-margin-modal {
+  margin-top: 20px; /* Adjust this value to your desired top margin */
+}
+
+.button-link {
+  display: inline-block;
+  padding: 15px 20px; /* Adjust the padding as needed */
+  /* Button background color */
+  color: #120f0f; /* Button text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* Style the black-themed navbar */
+.navbar {
+  background-color: #000;
+  border: none;
+  margin-bottom: 0;
+}

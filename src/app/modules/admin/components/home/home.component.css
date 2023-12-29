@@ -1,0 +1,29 @@
+.carousel {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.carousel-inner {
+  max-height: 1000px;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: auto;
+  background: transparent;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: none;
+  font-size: 40px;
+  color: #007bff;
+}
+
+/* You can customize the styles further as needed. */

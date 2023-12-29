@@ -1,0 +1,175 @@
+<div mat-dialog-title>Add Case</div>
+<form [formGroup]="addcaseform" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content>
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Client Name</mat-label>
+        <mat-select formControlName="client_details">
+          <mat-option
+            *ngFor="let clientname of clientnames"
+            [value]="clientname.id"
+          >
+            {{ clientname.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Case Type</mat-label>
+        <mat-select formControlName="case_type">
+          <mat-option *ngFor="let case of casenames" [value]="case.id">
+            {{ case.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>filling_number</mat-label>
+        <input
+          matInput
+          placeholder="filling_number"
+          required
+          formControlName="filling_number"
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>filling_date</mat-label>
+        <input
+          matInput
+          placeholder="2023-05-02"
+          required
+          maxlength="10"
+          formControlName="filling_date"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>registration_number</mat-label>
+        <input
+          matInput
+          placeholder="Mr.name"
+          required
+          formControlName="registration_number"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>registration_date</mat-label>
+        <input
+          matInput
+          placeholder="2023-05-02"
+          maxlength="10"
+          required
+          formControlName="registration_date"
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>cnr_number</mat-label>
+        <input
+          matInput
+          placeholder="cnr_number"
+          required
+          formControlName="cnr_number"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>first_hearing</mat-label>
+        <input
+          matInput
+          placeholder="2023-05-02"
+          maxlength="10"
+          required
+          formControlName="first_hearing"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>case_stage</mat-label>
+        <input
+          matInput
+          placeholder="case_stage"
+          required
+          formControlName="case_stage"
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>court_no</mat-label>
+        <input
+          matInput
+          placeholder="98353---"
+          required
+          formControlName="court_no"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>petitioner</mat-label>
+        <input
+          matInput
+          placeholder="Mr.name"
+          required
+          formControlName="petitioner"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>advocate_name</mat-label>
+        <input
+          matInput
+          placeholder="Mr.name"
+          required
+          formControlName="advocate_name"
+        />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>police_station</mat-label>
+        <input
+          matInput
+          placeholder="Sadar thana"
+          required
+          formControlName="police_station"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>fir_number</mat-label>
+        <input
+          matInput
+          placeholder="98765----"
+          required
+          formControlName="fir_number"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>fir_date</mat-label>
+        <input
+          matInput
+          placeholder="2023-05-02"
+          maxlength="10"
+          formControlName="fir_date"
+        />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>fir_year</mat-label>
+        <input
+          matInput
+          placeholder="2023"
+          maxlength="4"
+          required
+          formControlName="fir_year"
+        />
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" type="submit">submit</button>
+    <button mat-raised-button color="red" (click)="onCancelClick()">
+      Cancel
+    </button>
+  </div>
+</form>

@@ -1,0 +1,40 @@
+<div mat-dialog-title>First Hearing Date</div>
+<form [formGroup]="hearingform" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>next_hearing_date</mat-label>
+        <input
+          matInput
+          placeholder="2023-05-02"
+          required
+          formControlName="next_hearing_date"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>case_stage</mat-label>
+        <input
+          matInput
+          placeholder="case_stage"
+          required
+          formControlName="case_stage"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>court_no_judge</mat-label>
+        <input
+          matInput
+          placeholder="court_no_judge"
+          required
+          formControlName="court_no_judge"
+        />
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button color="primary" type="submit">Add</button>
+    <button mat-raised-button color="red" (click)="onCancelClick()">
+      Cancel
+    </button>
+  </div>
+</form>

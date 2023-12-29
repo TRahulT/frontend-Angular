@@ -1,0 +1,71 @@
+/* Container styles
+.mat-dialog-title {
+  font-size: 24px;
+  text-align: center;
+  margin: 20px 0;
+  padding-bottom: 20px;
+} */
+.content {
+  padding-top: 10px;
+}
+.row {
+  display: flex;
+  gap: 10px;
+}
+/* .mat-dialog-content {
+  padding: 20px;
+  margin-top: 20vh;
+} */
+
+/* .mat-dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+} */
+
+/* Form field styles */
+.mat-form-field {
+  width: 100%;
+  /* margin-bottom: 20px; */
+}
+
+/* .mat-label {
+  font-weight: bold;
+} */
+
+/* .mat-error {
+  color: red;
+} */
+
+/* Input field styles */
+/* .mat-input-element {
+  font-size: 16px;
+} */
+
+/* Button styles */
+
+/* Primary button
+button[color="primary"] {
+  background-color: #007bff;
+  color: white;
+}
+
+button[color="primary"]:hover {
+  background-color: #0056b3;
+}
+
+/* Cancel button */
+/* button[color="red"] {
+  background-color: #dc3545;
+  color: white;
+}
+
+button[color="red"]:hover {
+  background-color: #b21f2d;
+} */
+.action {
+  padding: 0px 25px 20px;
+}
+button {
+  flex: 1;
+}

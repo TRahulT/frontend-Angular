@@ -1,0 +1,120 @@
+<form>
+  <label>SarvhitID</label>
+  <input
+    name="SarvhitID"
+    [(ngModel)]="searchobj.sid"
+    placeholder="SarvhitID"
+    required=""
+  />
+  <button (click)="onSearchAll()">Search</button>
+</form>
+<div *ngIf="responseData && responseData.length > 0">
+  <h2>Client Details</h2>
+  <p>
+    <strong>Client ID:</strong> {{ responseData[0].client_details.client_id }}
+  </p>
+  <p>
+    <strong>Client Name:</strong>
+    {{ responseData[0].client_details.client_name }}
+  </p>
+  <p>
+    <strong>Father/Husband Name:</strong>
+    {{ responseData[0].client_details.client_fh_name }}
+  </p>
+
+  <h2>Case Details</h2>
+
+  <p><strong>Case Name:</strong> {{ responseData[0].case_type.case_name }}</p>
+
+  <h2>Other Details</h2>
+  <p><strong>Filling Number:</strong> {{ responseData[0].filling_number }}</p>
+  <p><strong>Sarvhit Number:</strong> {{ responseData[0].sarvhit_number }}</p>
+  <p><strong>Filling Date:</strong> {{ responseData[0].filling_date }}</p>
+  <p>
+    <strong>Registration Number:</strong>
+    {{ responseData[0].registration_number }}
+  </p>
+  <p><strong>CNR Number:</strong> {{ responseData[0].cnr_number }}</p>
+  <p>
+    <strong>First Hearing Date:</strong> {{ responseData[0].first_hearing }}
+  </p>
+  <p><strong>Case Stage:</strong> {{ responseData[0].case_stage }}</p>
+  <p><strong>Court Number:</strong> {{ responseData[0].court_no }}</p>
+  <p><strong>Petitioner:</strong> {{ responseData[0].petitioner }}</p>
+  <p><strong>Advocate Name:</strong> {{ responseData[0].advocate_name }}</p>
+  <p><strong>Police Station:</strong> {{ responseData[0].police_station }}</p>
+  <p><strong>FIR Number:</strong> {{ responseData[0].fir_number }}</p>
+  <p><strong>FIR Year:</strong> {{ responseData[0].fir_year }}</p>
+  <p><strong>FIR Date:</strong> {{ responseData[0].fir_date }}</p>
+</div>
+<div *ngIf="responseData3 && responseData3.length > 0">
+  <h2>Act and Section Details</h2>
+  <ul>
+    <li *ngFor="let item of responseData3">
+      <div class="act-section-item">
+        <p><strong>Under Act:</strong> {{ item.under_act }}</p>
+        <p><strong>Under Section:</strong> {{ item.under_section }}</p>
+      </div>
+    </li>
+  </ul>
+</div>
+<div *ngIf="responseData2 && responseData2.is_valid">
+  <h2>Case History with Interim Orders</h2>
+  <!-- <p><strong>is_valid:</strong> {{ responseData2.is_valid }}</p> -->
+  <div *ngIf="responseData2.data_value && responseData2.data_value.length > 0">
+    <ul>
+      <li *ngFor="let item of responseData2.data_value">
+        <div class="order-item">
+          <!-- Adjust this part based on your data structure -->
+          <!-- Assuming item contains properties like item.property1, item.property2, etc. -->
+          <p>
+            <strong>Order Details:</strong>
+            <a [href]="transformImagePath(item.order_details)" target="_blank"
+              >View Order</a
+            >
+          </p>
+          <p><strong>Hearing Date:</strong> {{ item.hearing_date }}</p>
+          <p><strong>Case Stage:</strong> {{ item.case_stage }}</p>
+          <p><strong>Court No/Judge:</strong> {{ item.court_no_judge }}</p>
+        </div>
+      </li>
+      <br />
+    </ul>
+  </div>
+  <div
+    *ngIf="!responseData2.data_value || responseData2.data_value.length === 0"
+  >
+    <p>No data available.</p>
+  </div>
+</div>
+<!-- <div *ngIf="responseData2 && responseData2.length > 0">
+  <h2>Case History with Interim Orders</h2>
+  <ul>
+    <li *ngFor="let item of responseData2">
+      <div class="order-item">
+        <p>
+          <strong>Order Details:</strong>
+          <a [href]="transformImagePath(item.order_details)" target="_blank"
+            >View Order</a
+          >
+        </p>
+        <p><strong>Hearing Date:</strong> {{ item.hearing_date }}</p>
+        <p><strong>Case Stage:</strong> {{ item.case_stage }}</p>
+        <p><strong>Court No/Judge:</strong> {{ item.court_no_judge }}</p>
+      </div>
+    </li>
+  </ul>
+</div> -->
+<div *ngIf="responseData4 && responseData4.length > 0">
+  <h2>Advocate Details</h2>
+  <ul>
+    <li *ngFor="let item of responseData4">
+      <div class="advocate-item">
+        <p><strong>Name:</strong> {{ item.name }}</p>
+        <p><strong>Phone Number:</strong> {{ item.phone_number }}</p>
+        <p><strong>Responsible Advocate:</strong> {{ item.resp_advocate }}</p>
+        <p><strong>Advocate Number:</strong> {{ item.adv_no }}</p>
+      </div>
+    </li>
+  </ul>
+</div>

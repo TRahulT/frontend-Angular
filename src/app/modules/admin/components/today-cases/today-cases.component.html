@@ -1,0 +1,103 @@
+<div>
+  <!-- <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input />
+    </mat-form-field> -->
+  <div *ngIf="noCasesForToday; else casesTable">
+    <p>No cases for today.</p>
+  </div>
+
+  <ng-template #casesTable>
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="Add Next Hearing">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Add Next Hearing
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="onCancelClick(row.Client.id)"
+            >
+              Add Hearing
+            </button>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="COO">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Interim</th>
+          <td mat-cell *matCellDef="let row">
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="onInterim(row.id)"
+            >
+              COO
+            </button>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="CNR_no">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>CNR_no</th>
+          <td mat-cell *matCellDef="let row">{{ row.Client.CNR_no }}</td>
+        </ng-container>
+
+        <!-- case_type Column -->
+        <ng-container matColumnDef="case_type">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Case Type</th>
+          <td mat-cell *matCellDef="let row">{{ row.Client.case_type }}</td>
+        </ng-container>
+
+        <!-- first_hearing Column -->
+        <ng-container matColumnDef="first_hearing">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            First Hearing
+          </th>
+          <td mat-cell *matCellDef="let row">{{ row.Client.first_hearing }}</td>
+        </ng-container>
+
+        <!-- client_name Column -->
+        <ng-container matColumnDef="client_name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Client Name</th>
+          <td mat-cell *matCellDef="let row">{{ row.Client.client_name }}</td>
+        </ng-container>
+
+        <!-- client_ph_no Column -->
+        <ng-container matColumnDef="client_ph_no">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Client Phone Number
+          </th>
+          <td mat-cell *matCellDef="let row">{{ row.Client.client_ph_no }}</td>
+        </ng-container>
+
+        <!-- case_stage Column -->
+        <ng-container matColumnDef="case_stage">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Case Stage</th>
+          <td mat-cell *matCellDef="let row">{{ row.case_stage }}</td>
+        </ng-container>
+
+        <!-- court_no_judge Column -->
+        <ng-container matColumnDef="court_no_judge">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Court No Judge
+          </th>
+          <td mat-cell *matCellDef="let row">{{ row.court_no_judge }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+        <!-- Row shown when there is no matching data. -->
+        <!-- <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="7">
+            No data matching the filter "{{ input.value }}"
+          </td>
+        </tr> -->
+      </table>
+
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        aria-label="Select page of users"
+      ></mat-paginator>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,28 @@
+<div class="parent">
+  <div class="main">
+    <input type="checkbox" id="chk" aria-hidden="true" />
+
+    <div class="signup"></div>
+
+    <div class="login">
+      <form>
+        <label for="chk" aria-hidden="true">Login</label>
+        <input
+          type="text"
+          name="username"
+          [(ngModel)]="loginObj.phone_number"
+          placeholder="phone_number"
+          required=""
+        />
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="loginObj.password"
+          placeholder="Password"
+          required=""
+        />
+        <button (click)="onLogin()">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
